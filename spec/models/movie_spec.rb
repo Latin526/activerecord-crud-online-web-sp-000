@@ -24,8 +24,8 @@ describe 'Movie' do
     end
 
     it 'has a director' do
-      movie.director = "The Wachowski Sisters"
-      expect(movie.director).to eq("The Wachowski Sisters")
+      movie.director = "The Wachowski Brothers"
+      expect(movie.director).to eq("The Wachowski Brothers")
     end
 
     it 'has a lead actor/actress' do
@@ -35,7 +35,7 @@ describe 'Movie' do
 
     it 'has an in theaters flag' do
       movie.in_theaters = false
-      expect(movie.in_theaters?).to be_falsey
+      expect(movie.in_theaters).to eq(false)
     end
   end
 
@@ -66,6 +66,7 @@ describe 'Movie' do
 
       it 'can be created with a hash of attributes' do
         movie = can_be_created_with_a_hash_of_attributes
+        #binding.pry
         expect(Movie.find_by(attributes)).to eq(movie)
       end
 
