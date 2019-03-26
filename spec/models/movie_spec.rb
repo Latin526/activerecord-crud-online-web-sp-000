@@ -69,7 +69,7 @@ describe 'Movie' do
         expect(Movie.find_by(attributes)).to eq(movie)
       end
 
-      it 'can be created in a block' do
+      it 'can be created in a block when no args are passed' do
         movie = can_be_created_in_a_block
 
         expect(Movie.last).to eq(movie)
